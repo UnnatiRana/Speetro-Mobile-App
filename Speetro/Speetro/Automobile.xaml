@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:mapoverlay="clr-namespace:MapOverlay"
+             mc:Ignorable="d"
+             x:Class="Speetro.Automobile" BackgroundColor="#2F2727">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="Start">
+            <Grid
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>                    
+                </Grid.ColumnDefinitions>
+                
+                <StackLayout 
+                    Orientation="Vertical" VerticalOptions="Center" Grid.Column="0">
+                    <Label
+                        x:Name="lblDistance"
+                        Text="0"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="32"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+                    <Label
+                        Text="DISTANCE"
+                        TextColor="LightYellow"
+                        FontSize="16"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    VerticalOptions="Center"
+                    Orientation="Vertical" Grid.Column="1">
+                    <Label 
+                            x:Name="icoSpeedOver"
+                            FontSize="32"
+                            TextColor="Green"
+                            ScaleX="1.5"
+                            FontAttributes="Bold"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"
+                            Text="!"/>
+                    <Label 
+                            x:Name="lblStatus"
+                            FontSize="16"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"
+                            TextColor="Yellow"
+                            Text="SPEED OVER"/>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Vertical" 
+                             VerticalOptions="Center" Grid.Column="2">
+                    <Label
+                        x:Name="lblSpeed"
+                        Text="0"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="32"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+                    <Label
+                        Text="SPEED"
+                        TextColor="LightYellow"
+                        FontSize="16"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout 
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                <Label
+                    Text="UNIT"
+                    TextColor="White"
+                    FontSize="16"
+                    WidthRequest="50"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Picker 
+                    x:Name="pckUnit"
+                    Title="m/s"
+                    Margin="-10,0,20,0"
+                    TextColor="White"
+                    TitleColor="White"
+                    BackgroundColor="Transparent"
+                    FontSize="24"
+                    WidthRequest="80"
+                    SelectedIndexChanged="pckUnit_SelectedIndexChanged"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Center" />
+                <Label
+                    Text="LIMIT"
+                    TextColor="White"
+                    Margin="20,0,-10,0"
+                    FontSize="16"
+                    WidthRequest="50"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Entry 
+                    x:Name="edtSpeedLimit"
+                    Text="60"
+                    FontSize="24"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    WidthRequest="80"
+                    HorizontalTextAlignment="Center"
+                    Placeholder="" Keyboard="Numeric" IsPassword="False" />
+            </StackLayout>
+
+            <mapoverlay:CustomMap
+                x:Name="map"
+                HeightRequest="240"
+                MapType="Street"                
+                IsShowingUser="True">
+            </mapoverlay:CustomMap>
+
+            <yummy:PancakeView 
+                x:Name="testBtn"
+                BackgroundColor="#D78633" 
+                WidthRequest="100"
+                HeightRequest="100"
+                CornerRadius="50" 
+                HorizontalOptions="Center"
+                BorderThickness="6" 
+                Margin="15"
+                BorderColor="#D78633" 
+                BorderGradientStartColor="#A7D4F3" 
+                BorderGradientEndColor="#232520" 
+                BorderGradientAngle="120" 
+                BorderDrawingStyle="Outside">
+                <Button
+                    x:Name="startStopJourney"
+                    Clicked="startStopJourney_Clicked"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Text="Start Journey!"/>
+            </yummy:PancakeView>
+
+            <!--<Label x:Name="lblTime"
+                   TextColor="White"></Label>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

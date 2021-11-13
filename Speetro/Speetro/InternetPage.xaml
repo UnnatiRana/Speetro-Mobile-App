@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="Speetro.InternetPage"
+             BackgroundColor="#2F2727">
+    <ContentPage.Content>
+
+        <StackLayout FlowDirection="LeftToRight" VerticalOptions="Center" Padding="50,0">
+
+            <StackLayout FlowDirection="LeftToRight" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label
+                    Text="Your IP Address is "
+                    TextColor="LightGray"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="myIpAddress"
+                    Text="---.---.---.---"
+                    TextColor="White"
+                    FontSize="Title"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout 
+                FlowDirection="LeftToRight" 
+                Orientation="Horizontal" 
+                HorizontalOptions="Center">
+                <Label
+                    Text="Your Network Strength is "
+                    VerticalOptions="CenterAndExpand" 
+                    TextColor="LightGray"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="myNetworkBandwidth"
+                    Text="-- MBps"
+                    FontSize="Subtitle"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout FlowDirection="LeftToRight" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label
+                    Text="Download Speed is "
+                    VerticalOptions="CenterAndExpand" 
+                    TextColor="LightGray"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="downloadSpeedValue"
+                    Text="-.--"
+                    TextColor="White"
+                    FontSize="Title"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="downloadSpeedLabel"
+                    Text="MBps"
+                    TextColor="White"
+                    FontSize="Subtitle"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout FlowDirection="LeftToRight" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label
+                    Text="Upload Speed is "
+                    VerticalOptions="CenterAndExpand" 
+                    TextColor="LightGray"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="uploadSpeedValue"
+                    Text="-.--"
+                    TextColor="White"
+                    FontSize="Title"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="uploadSpeedLabel"
+                    Text="MBps"
+                    TextColor="White"
+                    FontSize="Subtitle"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            
+            <ProgressBar 
+                x:Name="testProgress" ProgressColor="LightSkyBlue" Progress="0"/>
+
+            <Label
+                x:Name="serverInfo"
+                Text="Looking download test server."
+                TextColor="LightGray"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Label
+                x:Name="indicators"
+                Text="Ready to test"
+                IsVisible="False"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label
+                x:Name="indicator"
+                IsVisible="False"
+                Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+
+            <yummy:PancakeView 
+                x:Name="testBtn"
+                BackgroundColor="#D78633" 
+                WidthRequest="100"
+                HeightRequest="100"
+                CornerRadius="50" 
+                HorizontalOptions="Center"
+                BorderThickness="6" 
+                BorderColor="#D78633" 
+                BorderGradientStartColor="#A7D4F3" 
+                BorderGradientEndColor="#232520" 
+                BorderGradientAngle="120" 
+                BorderDrawingStyle="Outside">
+                <Button
+                    x:Name="testBtnLabel"
+                    Clicked="OnTestBtnClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Text="Testing!"/>
+            </yummy:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

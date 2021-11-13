@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             BackgroundColor="#2F2727"
+             x:Class="Speetro.MainPage">
+
+    <StackLayout VerticalOptions="Center" Spacing="0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Margin="20">
+            <Label Text="SPEE"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   TextColor="White"></Label>
+            <Label Text="TRO"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   TextColor="#FF0000"></Label>
+        </StackLayout>
+
+        <Button Text="Automobile" Margin="40,10" Clicked="Automobile_Click"
+                BackgroundColor="#50A852" 
+                FontAttributes="Bold"
+                FontSize="18"
+                TextColor="#FFFFFF"></Button>
+        <Button Text="Human" Margin="40,10" Clicked="Human_Click"
+                BackgroundColor="#50A852" 
+                FontAttributes="Bold"
+                FontSize="18"
+                TextColor="#FFFFFF"></Button>
+        <Button Text="Internet" 
+                Margin="40,10" 
+                Clicked="Internet_Click" 
+                BackgroundColor="#50A852" 
+                FontAttributes="Bold"
+                FontSize="18"
+                TextColor="#FFFFFF"></Button>
+
+        <!--<StackLayout
+            touch:TouchEff.RippleCount="1"
+            touch:TouchEff.PressedOpacity="0.6"
+            touch:TouchEff.RegularOpacity="1"
+            Padding="0"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout.Effects>
+                <touch:TouchEff Completed="Automobile_Click" />
+            </StackLayout.Effects>
+            <Image Source="automobile.png"/>
+        </StackLayout>
+
+        <StackLayout
+            Padding="0"
+            touch:TouchEff.RippleCount="1"
+            touch:TouchEff.PressedOpacity="0.6"
+            touch:TouchEff.RegularOpacity="1"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout.Effects>
+                <touch:TouchEff Completed="Human_Click" />
+            </StackLayout.Effects>
+            <Image Source="human.png"/>
+        </StackLayout>
+
+        <StackLayout
+            touch:TouchEff.RippleCount="1"
+            touch:TouchEff.PressedOpacity="0.6"
+            touch:TouchEff.RegularOpacity="1"
+            Padding="0"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout.Effects>
+                <touch:TouchEff Completed="Internet_Click" />
+            </StackLayout.Effects>
+            <Image Source="internet.png"/>
+        </StackLayout>-->
+    </StackLayout>
+    
+
+</ContentPage>
